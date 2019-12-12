@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<view class="reading">
+  <view class="music">
+    <image src="{{detail.music.coverImg}}" class="background" >
+    </image>
+    <image src="{{playButton}}" class="start" bindtap="playMusic">
+    </image>
+  </view>
+  <view class="userinfo">
+    <image class="avatar" src="{{detail.avatar}}"></image>
+    <view class="userInfo-container">
+      <span class="name">{{detail.author}}</span>
+      <span class="text">发表于</span>
+      <span class="time">{{detail.dateTime}}</span>
+    </view>
+  </view>
+  <view class="title">
+      <view>{{detail.title}}</view>
+      <image class="collection" src="/images/icon/collection-anti.png"></image>
+      <image class="share" src="/images/icon/share.png"></image>
+  </view>
+  <view class="detail">
+    {{detail.detail}}
+  </view>
+</view>

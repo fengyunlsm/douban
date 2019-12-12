@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/article/article",
+    "pages/movie/movie",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#40a9ff",
+    "navigationBarTitleText": "文与字",
+    "navigationBarTextStyle": "black"
+  },
+    "tabBar": {
+      "selectedColor": "#ff5777",
+      "list": [
+        {
+          "pagePath": "pages/article/article",
+          "text": "文章",
+          "iconPath": "/images/tab/yuedu.png",
+          "selectedIconPath": "/images/tab/yuedu_hl.png"
+        },
+        {
+          "pagePath": "pages/movie/movie",
+          "text": "电影",
+          "iconPath": "/images/tab/dianying.png",
+          "selectedIconPath": "/images/tab/dianying_hl.png"
+        }
+      ]
+    },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

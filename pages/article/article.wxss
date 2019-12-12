@@ -1,0 +1,36 @@
+/**index.wxss**/
+.post-wrap {
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+
+.header-wrap {
+  padding-left: 10rpx;
+  height: 90rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-top: solid 1rpx #9eacb6;
+  position: relative;
+}
+
+.avatar {
+  display: inline-block;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 10rpx;
+}
+
+.time {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin-left: 10rpx;
+}
+
+.title {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+}

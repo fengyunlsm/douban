@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="article">
+  <w-swiper list="{{banners}}"/>
+  <view wx:for="{{postInfo}}" wx:key="{{key}}" class="post-wrap" bindtap="goDetail" data-postId ="{{item.postId}}">
+    <view class="header-wrap">
+      <image class="avatar" src="{{item.avatar}}"></image>
+      <view class="time">{{item.date}}</view>
+    </view>
+    <view class="title">{{item.title}}</view>
+    <image class="icon" src="{{item.imgSrc}}"></image>
+  </view>
+</view>

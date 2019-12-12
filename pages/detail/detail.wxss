@@ -1,0 +1,86 @@
+.music {
+  position: relative;
+  width: 100%
+}
+.background {
+
+}
+
+.start {
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  z-index: 10rpx;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+
+}
+
+.userinfo {
+  position: relative;
+}
+.avatar {
+  display: inline-block;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 10rpx 10rpx;
+}
+.userInfo-container {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.name {
+  color: #ccc;
+  font-size:30rpx;
+  margin: 0rpx 10rpx;
+}
+
+.text {
+  color: #ccc;
+  font-size: 20rpx;
+  margin: 0rpx 5rpx;
+}
+
+.time {
+  color: #ccc;
+  font-size: 20rpx;
+  margin: 0rpx 10rpx;
+}
+
+.title {
+  position: relative;
+  margin: 0rpx 10rpx;
+  padding-bottom: 100rpx;
+  border-bottom: solid 3rpx #ccc;
+  font-weight: bold;
+}
+
+.collection {
+  position: absolute;
+  bottom: 0rpx;
+  right: 0rpx;
+  transform: translate(0, 50%);
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.share {
+  position: absolute;
+  bottom: 0rpx;
+  right: 115rpx;
+  transform: translate(0, 50%);
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.detail {
+  margin: 0rpx 10rpx;
+  padding-top: 100rpx;
+  line-height: 65rpx;
+  font-size: 37rpx;
+  color: #07111b;
+}

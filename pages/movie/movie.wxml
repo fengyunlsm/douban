@@ -1,0 +1,6 @@
+<import src="../../templates/moviesList/movieList-template.wxml" />
+<view class="movie">
+  <image src="../../images/icon/search.png" class="search">搜索功能</image>
+  <input class="input"></input>
+  <template is="movieList" data="{{in_theaters}}"></template>
+</view>
