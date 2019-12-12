@@ -1,20 +1,24 @@
 <template name="movieList">
   <view class="container">
     <view class="header">
-      <span class="title">正在热映</span>
+      <span class="titles">正在热映</span>
       <span class="more">更多</span>
-      <image class="icon" src="/images/icon/arrow-right.png">></image>
+      <image class="icon" src="/images/icon/arrow-right.png"></image>
     </view>
-    <view wx:for="{{in_theaters}}" wx:key="{{index}}"  class="content">
-      <image class="picture" src="{{item.images.large}}">
-      </image>
-      <view class="title">
-        {{item.original_title}}
+    <view class="content-container" bindtap="goMoviesDetail">
+      <view wx:for="{{in_theaters}}" wx:key="{{index}}"  class="content">
+        <image class="picture" src="{{item.images.large}}">
+        </image>
+        <view class="title">
+          {{item.original_title}}
+        </view>
+        <view class="stars">
+          <view wx:for="{{item.rating.starPic}}" wx:key="{{index}}" class="star-container">
+             <image class="star" src="{{item}}"></image>
+           </view>
+        </view>
+        <span class="score">{{item.rating.average}}</span>
       </view>
-     <view wx:for="{{item.rating.starPic}}" wx:key="{{index}}" class="star-container">
-        <image class="star" src="{{item}}"></image>
-      </view>
-      <span class="score">{{item.rating.average}}</span>
     </view>
-  </view>
+    </view>
 </template>

@@ -1,4 +1,16 @@
+@import "../../templates/moviesList/movieList-template.wxss"
+
+.search-container {
+  background-color: rgb(242, 242, 242);
+}
 .search {
-  width: 160rpx;
-  height: 160rpx;
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 32rpx 25rpx 26rpx 25rpx;
+}
+
+.input {
+  display: inline-block;
+  height: 100%;
 }
