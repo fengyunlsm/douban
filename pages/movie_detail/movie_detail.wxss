@@ -1,0 +1,61 @@
+.header-container {
+    display: relative;
+    padding: 100rpx 60rpx 0rpx 80rpx;
+}
+
+.big-title {
+  display: absolute;
+  top: 100rpx;
+  left: 80rpx;
+  color: rgb(255, 255, 255);
+  font-size: 60rpx;
+  font-weight: blod;
+}
+
+.address {
+  display: absolute;
+  left: 80rpx;
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+  color: rgb(255, 255, 255);
+  font-size: 50rpx;
+}
+
+.container {
+  display: absolute;
+  left: 80rpx;
+}
+
+.like-container {
+  color: rgb(223, 58, 64);
+  padding-right: 20rpx;
+}
+
+.like {
+  color: rgb(102, 102, 102);
+}
+
+.comment-count {
+  padding-left: 34rpx;
+  padding-right: 20rpx;
+  color: rgb(223, 58, 64);
+}
+
+.comment {
+  color: rgb(102, 102, 102);
+}
+
+.small-title {
+  display: absolute;
+  bottom: 0rpx;
+  left: 80rpx;
+  color: rgb(99, 96, 97);
+}
+
+.image-container {
+  display: absolute;
+  left: 60rpx;
+  bottom: 0rpx;
+  width: 340rpx;
+  height: 480rpx;
+}

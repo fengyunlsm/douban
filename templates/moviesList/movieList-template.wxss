@@ -80,4 +80,5 @@ span.titles {
   display: inline-block;
   color: rgb(111, 111, 112);
   font-size: 30rpx;
+  margin-left: 20rpx;
 }

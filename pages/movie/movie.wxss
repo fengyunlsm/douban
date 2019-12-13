@@ -1,6 +1,7 @@
 @import "../../templates/moviesList/movieList-template.wxss"
 
 .search-container {
+  position: relative;
   background-color: rgb(242, 242, 242);
 }
 .search {
@@ -13,4 +14,7 @@
 .input {
   display: inline-block;
   height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }

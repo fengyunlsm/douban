@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    postId: ''
+    postId: '',
+    movieId:''
   }
 })

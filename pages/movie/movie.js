@@ -33,10 +33,6 @@ Page({
       let starNum = parseInt(item.rating.stars) / 10
       let integer = parseInt(starNum)
       let remainder = this.getRemainder(starNum, integer)
-      if (index === 1) {
-        console.log('integer: ', integer)
-        console.log('remainder: ', remainder)
-      }
       this.getStarPic(integer, remainder, item)
     })
   },
@@ -70,5 +66,14 @@ Page({
         item.rating.starPic.push(path)
       }
     }
+  },
+  goMoviesDetail: function (options) {
+    // 跳转到详情页
+    console.log('Detail: ', options)
+    app.movieId = options.currentTarget.dataset.movieid
+    console.log('movieId: ', app.movieId)
+    wx.navigateTo({
+      url: "../movie_detail/movie_detail"
+    })
   }
 })
