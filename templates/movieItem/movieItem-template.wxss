@@ -1,0 +1,15 @@
+.picture {
+  width: 200rpx;
+  height: 280rpx;
+  background-repeat: no-repeat;
+}
+
+.title {
+  color: rgb(111, 111, 112);
+  padding-bottom: 25rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  width:200rpx;
+}

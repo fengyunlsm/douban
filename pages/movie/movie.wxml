@@ -1,8 +1,12 @@
 <import src="../../templates/moviesList/movieList-template.wxml" />
 <view class="movie">
   <view class="search-container">
-    <image src="../../images/icon/search.png" class="search">搜索功能</image>
-    <input class="input"></input>
+    <image src="../../images/icon/search.png" class="search" ></image>
+    <input class="input" bindtap="search"></input>
   </view>
-  <template is="movieList" data="{{in_theaters}}"></template>
+  <view wx:if="{{isSearch}}">
+    <template is="movieList" data="{{in_theaters, top250, coming_soon}}"></template>
+  </view>
+  <view wx:if="{{isSearch === false}}"  bindtap="cancelSearch" class="blank">
+  </view>
 </view>

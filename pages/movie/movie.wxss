@@ -1,9 +1,17 @@
 @import "../../templates/moviesList/movieList-template.wxss"
+@import "../../templates/movieItem/movieItem-template.wxss"
+@import "../../templates/star/star-template.wxss"
 
 .search-container {
   position: relative;
   background-color: rgb(242, 242, 242);
 }
+
+.movie {
+  height: 100%;
+  width: 100%;
+}
+
 .search {
   display: inline-block;
   width: 30rpx;
@@ -17,4 +25,14 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
+  width: 100%;
+}
+
+.current {
+  opacity: 0;
+}
+
+.blank {
+  width: 100%;
+  height:100%;
 }

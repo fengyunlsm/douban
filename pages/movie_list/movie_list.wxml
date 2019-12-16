@@ -1,0 +1,6 @@
+<import src="../../templates/movieItem/movieItem-template.wxml" />
+<view class="content-container" >
+  <view wx:for="{{movieDetails}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+    <template is="movieItem" data="{{item}}"></template>
+  </view>
+</view>

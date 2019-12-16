@@ -1,0 +1,20 @@
+.stars {
+  display: inline-block;
+}
+
+.star-container {
+  display: inline-block;
+}
+
+.star {
+  width: 26rpx;
+  height: 26rpx;
+  background-repeat: no-repeat;
+}
+
+.score {
+  display: inline-block;
+  color: rgb(111, 111, 112);
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}

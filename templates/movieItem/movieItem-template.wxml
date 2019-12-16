@@ -1,0 +1,9 @@
+<import src="../../templates/star/star-template.wxml" />
+<template name="movieItem">
+  <image class="picture" src="{{item.images.large}}">
+  </image>
+  <view class="title">
+    {{item.original_title}}
+  </view>
+  <template is="star" data="{{item}}"></template>
+</template>
