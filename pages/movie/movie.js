@@ -25,10 +25,6 @@ Page({
         that.setData ({
           'in_theaters': res.data.subjects
         }, () => {
-<<<<<<< HEAD
-          // 设计路上是不一样的情况下
-          console.log('reeeeee: ',that.data.in_theaters)
-=======
           console.log('isSearch: ',that.data.isSearch)
         })
       }
@@ -60,7 +56,6 @@ Page({
           'coming_soon': res.data.subjects
         }, () => {
           console.log('reeeeee: ',that.data.coming_soon)
->>>>>>> 4b3dedfe36a1cff1e1b03c4a7b95bad2092196ff
         })
       }
     })

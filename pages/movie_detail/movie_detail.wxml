@@ -17,11 +17,7 @@
       <view class="small-title">
         {{movieDetail.title}}
       </view>
-<<<<<<< HEAD
-      <image class="image-container" src="{{movieDetail.images.large}}"></image>
-=======
         <image class="image-container" src="{{movieDetail.images.large}}"></image>
->>>>>>> 4b3dedfe36a1cff1e1b03c4a7b95bad2092196ff
     </view>
     <view class="movie-information">
       <view class="score-container">
@@ -51,16 +47,11 @@
       </view>
     </view>
     <view class="actor-container">
-<<<<<<< HEAD
-      <view wx:key="{{index}}" wx:for="{{movieDetail.casts}}">
-        <image src="{{item.avatars}}" class="actor-image"></image>
-=======
       <view class="men">
         影人
       </view>
       <view wx:key="{{index}}" wx:for="{{movieDetail.casts}}" class="each-container">
         <image src="{{item.avatars.large}}" class="actor-image"></image>
->>>>>>> 4b3dedfe36a1cff1e1b03c4a7b95bad2092196ff
         <view class="actor-name">
           {{item.name}}
         </view>
