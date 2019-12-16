@@ -54,7 +54,7 @@
 
 .image-container {
   display: absolute;
-  left: 60rpx;
+  right: 60rpx;
   bottom: 0rpx;
   width: 340rpx;
   height: 480rpx;

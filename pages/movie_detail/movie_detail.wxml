@@ -13,8 +13,7 @@
       <view class="small-title">
         {{movieDetail.title}}
       </view>
-      <image class="image-container" src="{{movieDetail.images.large}}">
-      </image>
+      <image class="image-container" src="{{movieDetail.images.large}}"></image>
     </view>
     <view class="movie-information">
       <view class="score-container">
@@ -31,7 +30,7 @@
         <span class="actors" wx:for="{{movieDetail.casts}}" wx:key="{{index}}">{{item.name}}/</span>
       </view>
       <view class="type-container">
-        <span class="type">type</span>
+        <span class="type">类型</span>
         <span class="type-detail" wx:for="{{movieDetail.genres}}" wx:key="{{index}}">{{item}}/</span>
       </view>
     </view>
@@ -45,10 +44,10 @@
     </view>
     <view class="actor-container">
       <view wx:key="{{index}}" wx:for="{{movieDetail.casts}}">
-        <image src="{{item.avatars}}" class="actor-image">
-        </image>
+        <image src="{{item.avatars}}" class="actor-image"></image>
         <view class="actor-name">
           {{item.name}}
         </view>
     </view>
+</view>
 </view>

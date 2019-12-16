@@ -20,6 +20,7 @@ Page({
         that.setData ({
           in_theaters: res.data.subjects
         }, () => {
+          // 设计路上是不一样的情况下
           console.log('reeeeee: ',that.data.in_theaters)
         })
       }
@@ -33,6 +34,10 @@ Page({
       let starNum = parseInt(item.rating.stars) / 10
       let integer = parseInt(starNum)
       let remainder = this.getRemainder(starNum, integer)
+      if (index === 1) {
+        console.log('integer: ', integer)
+        console.log('remainder: ', remainder)
+      }
       this.getStarPic(integer, remainder, item)
     })
   },
@@ -67,7 +72,7 @@ Page({
       }
     }
   },
-  goMoviesDetail: function (options) {
+  goMoviesDetail (options) {
     // 跳转到详情页
     console.log('Detail: ', options)
     app.movieId = options.currentTarget.dataset.movieid
