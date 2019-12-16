@@ -1,24 +1,41 @@
-<template name="movieList">
-  <view class="container">
+<import src="../../templates/movieItem/movieItem-template.wxml" />
+<template name="movieList" >
+  <view class="container" bindtap="cancelSearch">
     <view class="header">
       <span class="titles">正在热映</span>
-      <span class="more">更多</span>
+      <span class="more" bindtap="goMovieList" data-movieListId="1">更多</span>
       <image class="icon" src="/images/icon/arrow-right.png"></image>
     </view>
     <view class="content-container" >
-      <view wx:for="{{in_theaters}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
-        <image class="picture" src="{{item.images.large}}">
-        </image>
-        <view class="title">
-          {{item.original_title}}
+      <scroll-view scroll-x="true" style=" width: 100%;height: 100%;white-space: nowrap;">
+        <view wx:for="{{in_theaters}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+          <template is="movieItem" data="{{item}}"></template>
         </view>
-        <view class="stars">
-          <view wx:for="{{item.rating.starPic}}" wx:key="{{index}}" class="star-container">
-             <image class="star" src="{{item}}"></image>
-           </view>
+      </scroll-view>
+    </view>
+    <view class="header">
+      <span class="titles">Top250</span>
+      <span class="more" bindtap="goMovieList" data-movieListId="2">更多</span>
+      <image class="icon" src="/images/icon/arrow-ri ght.png"></image>
+    </view>
+    <view class="content-container" >
+      <scroll-view scroll-x="true" style=" width: 100%;height: 100%;white-space: nowrap;">
+        <view wx:for="{{top250}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+          <template is="movieItem" data="{{item}}"></template>
         </view>
-        <span class="score">{{item.rating.average}}</span>
-      </view>
+     </scroll-view>
     </view>
+    <view class="header">
+      <span class="titles">即将上映</span>
+      <span class="more" bindtap="goMovieList" data-movieListId="3">更多</span>
+      <image class="icon" src="/images/icon/arrow-right.png"></image>
     </view>
+    <view class="content-container" >
+      <scroll-view scroll-x="true" style=" width: 100%;height: 100%;white-space: nowrap;">
+        <view wx:for="{{coming_soon}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+          <template is="movieItem" data="{{item}}"></template>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
 </template>

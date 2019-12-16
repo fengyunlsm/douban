@@ -1,0 +1,11 @@
+@import "../../templates/movieItem/movieItem-template.wxss"
+@import "../../templates/star/star-template.wxss"
+
+.content-container {
+  padding: 40rpx 40rpx 0rpx 25rpx;
+}
+
+.content {
+  display: inline-block;
+  padding-right: 30rpx;
+}

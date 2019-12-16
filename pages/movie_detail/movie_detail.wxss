@@ -1,32 +1,47 @@
+.movie-detail-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.header-image {
+  padding: 50rpx 30rpx 0rpx 40rpx;
+  background-image:url("https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2519994468.jpg");
+  z-index: -3;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-filter: blur(15rpx);
+  height: 400rpx;
+}
+
 .header-container {
-    display: relative;
-    padding: 100rpx 60rpx 0rpx 80rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  padding: 50rpx 30rpx 0rpx 40rpx;
+  height: 400rpx;
+  width: 100%;
+  z-index:10;
 }
 
 .big-title {
-  display: absolute;
-  top: 100rpx;
-  left: 80rpx;
   color: rgb(255, 255, 255);
-  font-size: 60rpx;
   font-weight: blod;
+  font-size:60rpx;
 }
 
 .address {
-  display: absolute;
-  left: 80rpx;
-  margin-top: 80rpx;
-  margin-bottom: 80rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
   color: rgb(255, 255, 255);
-  font-size: 50rpx;
+  font-size: 40rpx;
 }
 
 .container {
-  display: absolute;
-  left: 80rpx;
+  font-size: 30rpx;
 }
 
-.like-container {
+.like-count {
   color: rgb(223, 58, 64);
   padding-right: 20rpx;
 }
@@ -46,16 +61,80 @@
 }
 
 .small-title {
-  display: absolute;
+  position: absolute;
   bottom: 0rpx;
-  left: 80rpx;
-  color: rgb(99, 96, 97);
+  font-weight: bold;
 }
 
 .image-container {
+<<<<<<< HEAD
   display: absolute;
+=======
+  position: absolute;
+>>>>>>> 4b3dedfe36a1cff1e1b03c4a7b95bad2092196ff
   right: 60rpx;
   bottom: 0rpx;
-  width: 340rpx;
-  height: 480rpx;
+  width: 170rpx;
+  height: 240rpx;
+}
+
+.movie-information {
+  padding: 50rpx 30rpx 50rpx 40rpx;
+  border-bottom: 2rpx solid rgb(217, 217, 217);
+}
+
+.score-container {
+  margin-bottom: 20rpx;
+}
+
+.score, .director, .actor, .type, .plot-name {
+  display: inline-block;
+  padding-right: 30rpx;
+  color: rgb(163, 164, 163);
+  font-weight: bold;
+
+}
+
+.star {
+  padding-right: 25rpx;
+}
+
+.total, .name, .actors, .type-detail, .plot-content, .actor-name, .men {
+  line-height: 20rpx;
+  color: rgb(102, 102, 102);
+}
+
+.plot-container {
+  padding: 55rpx 30rpx 55rpx 40rpx;
+  border-bottom: 2rpx solid rgb(217, 217, 217);
+}
+.plot-name {
+  padding-bottom:  35rpx;
+}
+
+.plot-content {
+  line-height: 60rpx;
+}
+
+.actor-container {
+  padding: 55rpx 30rpx 55rpx 40rpx;
+}
+
+.each-container {
+  padding-right: 40rpx;
+  display: inline-block;
+}
+
+.actor-image {
+  width: 170rpx;
+  height: 210rpx;
+  padding-bottom: 15rpx ;
+}
+
+.men {
+  padding-bottom: 50rpx;
+}
+
+.actor-name {
+  justify-content: center;
 }

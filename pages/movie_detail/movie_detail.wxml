@@ -1,31 +1,38 @@
+<import src="../../templates/star/star-template.wxml" />
 <view class="movie-detail-container">
+    <image class="header-image">
+
+    </image>
     <view class="header-container">
       <view class='big-title'>
         {{movieDetail.title}}
       </view>
       <view class="address">
-        {{movieDetail.countries[0]}} · {{movieDetial.year}}
+        {{movieDetail.countries[0]}} · {{movieDetail.year}}
       </view>
       <view class="container">
         <span class="like-count">{{movieDetail.wish_count}} </span><span class="like">人喜欢</span>
-        <span class="comment-count">{{movieDetial.reviews_count}} </span><span class="comment">条评论</span>
+        <span class="comment-count">{{movieDetail.reviews_count}}</span><span class="comment">条评论</span>
       </view>
       <view class="small-title">
         {{movieDetail.title}}
       </view>
+<<<<<<< HEAD
       <image class="image-container" src="{{movieDetail.images.large}}"></image>
+=======
+        <image class="image-container" src="{{movieDetail.images.large}}"></image>
+>>>>>>> 4b3dedfe36a1cff1e1b03c4a7b95bad2092196ff
     </view>
     <view class="movie-information">
       <view class="score-container">
         <span class="score">评分</span>
-        <span class="star">调用星星组件</span>
-        <span class="">{{movieDetail.rating.average}}</span>
+        <template is="star" data="{{movieDetail}}"></template>
       </view>
       <view class="director-container">
         <span class="director">导演</span>
         <span class="name" wx:for="{{movieDetail.directors}}" wx:key="{{index}}">{{item.name}}/</span>
       </view>
-      <view class="actor-container">
+      <view class="act-container">
         <span class="actor">影人</span>
         <span class="actors" wx:for="{{movieDetail.casts}}" wx:key="{{index}}">{{item.name}}/</span>
       </view>
@@ -36,18 +43,28 @@
     </view>
     <view class="plot-container">
       <view class="plot-name">
-        剧情介绍
+        剧情简介
       </view>
       <view class="plot-content">
+
         {{movieDetail.summary}}
       </view>
     </view>
     <view class="actor-container">
+<<<<<<< HEAD
       <view wx:key="{{index}}" wx:for="{{movieDetail.casts}}">
         <image src="{{item.avatars}}" class="actor-image"></image>
+=======
+      <view class="men">
+        影人
+      </view>
+      <view wx:key="{{index}}" wx:for="{{movieDetail.casts}}" class="each-container">
+        <image src="{{item.avatars.large}}" class="actor-image"></image>
+>>>>>>> 4b3dedfe36a1cff1e1b03c4a7b95bad2092196ff
         <view class="actor-name">
           {{item.name}}
         </view>
     </view>
+  </view>
 </view>
 </view>

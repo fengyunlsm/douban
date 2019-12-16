@@ -9,7 +9,6 @@
 }
 span.titles {
   display: inline-block;
-  position: absolute;
   left: 0rpx;
   top: 0rpx;
   font-size: 30rpx;
@@ -21,7 +20,6 @@ span.titles {
   display: inline-block;
   position: absolute;
   right: 30rpx;
-  top: 0rpx;
   color: rgb(76, 98, 133);
   font-size: 26rpx;
 }
@@ -44,41 +42,9 @@ span.titles {
 .content {
   display: inline-block;
   padding-right: 30rpx;
-}
-
-.picture {
-  width: 200rpx;
-  height: 280rpx;
-  background-repeat: no-repeat;
-}
-
-.title {
-  color: rgb(111, 111, 112);
   padding-bottom: 30rpx;
-  font-size: 30rpx;
-  font-weight: bold;
-  overflow: hidden;
-  white-space: nowrap;
-  width:200rpx;
-}
-.stars {
-  display: inline-block;
-  margin-left: 15rpx;
 }
 
-.star-container {
-  display: inline-block;
-}
-
-.star {
-  width: 26rpx;
-  height: 26rpx;
-  background-repeat: no-repeat;
-}
-
-.score {
-  display: inline-block;
-  color: rgb(111, 111, 112);
-  font-size: 30rpx;
-  margin-left: 20rpx;
+.current {
+  display: none;
 }
