@@ -106,50 +106,47 @@ Page({
       }
     }
   },
+<<<<<<< HEAD
   goMoviesDetail (options) {
     // 跳转到详情页
     app.movieId = options.currentTarget.dataset.movieid
+=======
+  goMoviesDetail: function (options) {
+    // 根据类型和数据来获取数据
+    let movieId = options.currentTarget.dataset.movieid
+    let category =  options.currentTarget.dataset.category
+>>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4
     console.log('movieId: ', app.movieId)
     wx.navigateTo({
-      url: "../movie_detail/movie_detail"
+      url: "../movie_detail/movie_detail?category=" + category + '&movieId=' + movieId
     })
   },
-  goMovieList: function (options) {
+  goMore: function (options) {
     // 跳转到列表页
-    // http://t.yushu.im/v2/movie/in_theaters
-    // http://t.yushu.im/v2/movie/top250?statr=0&count=3
-    // http://t.yushu.im/v2/movie/coming_soon?statr=0&count=3
-    console.log('跳转到列表详情页')
     let route = {
       '1': 'in_theaters',
       '2': 'top250',
       '3': 'coming_soon'
     }
+<<<<<<< HEAD
     // 获取不一样的测试数据的
     console.log('optionsID:', options)
+=======
+>>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4
     let movieListId = options.currentTarget.dataset.movielistid
-    console.log('movieListId: ', movieListId)
     app.movieListRoute = route[movieListId]
     wx.navigateTo({
-      url: "../movie_list/movie_list"
+      url: "../more/more"
     })
   },
   search: function () {
-    // 修改样式
-    console.log('修改了样式')   // weiziji1
     this.setData({
       isSearch: false
-    }, () => {
-      console.log('样式:', this.data.isSearch)
     })
   },
   cancelSearch: function () {
-
-    console.log('确认搜索')
     this.setData({
       isSearch: true
-    }, () => {
-      console.log('cancel：', this.data.isSearch)
     })
   }
 })

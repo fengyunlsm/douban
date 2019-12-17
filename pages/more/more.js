@@ -1,19 +1,25 @@
 
 const app = getApp()
 
-
 Page({
   data: {
     movieDetails: {},
+<<<<<<< HEAD:pages/movie_list/movie_list.js
     movieNavigate: ''
+=======
+    navTitle: ''
+>>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4:pages/more/more.js
   },
   onLoad: function (options) {
     // 获取'更多'页面的数据
     let that = this
     let url = 'http://t.yushu.im/v2/movie' + '/' + app.movieListRoute
+<<<<<<< HEAD:pages/movie_list/movie_list.js
     // 根据 app.movieListRoute 来判断是哪个栏目
     this.data.movieNavigate = this.getMovieNavigate(app.movieListRoute)
     console.log('地址: ', url )
+=======
+>>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4:pages/more/more.js
     wx.request({
       url: url,
       success: function (res) {
@@ -26,12 +32,24 @@ Page({
       }
     })
   },
+<<<<<<< HEAD:pages/movie_list/movie_list.js
   onReady: function (options) {
     wx.setNavigationBarTitle({
       title: this.data.movieNavigate
     })
   },
   getMovieNavigate(nav) {
+=======
+  onReady: function () {
+    // 根据传过来的参数显示导航标题
+    this.data.navTitle = this.getNavTitle(app.movieListRoute)
+    wx.setNavigationBarTitle({
+      title: this.data.navTitle
+    })
+  },
+  getNavTitle(nav) {
+    // 动态获取导航栏标题
+>>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4:pages/more/more.js
     if (nav === 'in_theaters') {
       return '正在热映'
     } else if (nav === 'top250') {

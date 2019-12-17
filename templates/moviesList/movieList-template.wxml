@@ -3,36 +3,36 @@
   <view class="container" bindtap="cancelSearch">
     <view class="header">
       <span class="titles">正在热映</span>
-      <span class="more" bindtap="goMovieList" data-movieListId="1">更多</span>
+      <span class="more" bindtap="goMore" data-movieListId="1">更多</span>
       <image class="icon" src="/images/icon/arrow-right.png"></image>
     </view>
     <view class="content-container" >
       <scroll-view scroll-x="true" style=" width: 100%;height: 100%;white-space: nowrap;">
-        <view wx:for="{{in_theaters}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+        <view wx:for="{{in_theaters}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-category="in_theaters" data-movieId="{{item.id}}">
           <template is="movieItem" data="{{item}}"></template>
         </view>
       </scroll-view>
     </view>
     <view class="header">
       <span class="titles">Top250</span>
-      <span class="more" bindtap="goMovieList" data-movieListId="2">更多</span>
+      <span class="more" bindtap="goMore" data-movieListId="2">更多</span>
       <image class="icon" src="/images/icon/arrow-ri ght.png"></image>
     </view>
     <view class="content-container" >
       <scroll-view scroll-x="true" style=" width: 100%;height: 100%;white-space: nowrap;">
-        <view wx:for="{{top250}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+        <view wx:for="{{top250}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-category="top250" data-movieId="{{item.id}}">
           <template is="movieItem" data="{{item}}"></template>
         </view>
      </scroll-view>
     </view>
     <view class="header">
       <span class="titles">即将上映</span>
-      <span class="more" bindtap="goMovieList" data-movieListId="3">更多</span>
+      <span class="more" bindtap="goMore" data-movieListId="3">更多</span>
       <image class="icon" src="/images/icon/arrow-right.png"></image>
     </view>
     <view class="content-container" >
       <scroll-view scroll-x="true" style=" width: 100%;height: 100%;white-space: nowrap;">
-        <view wx:for="{{coming_soon}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+        <view wx:for="{{coming_soon}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-category="coming_soon" data-movieId="{{item.id}}">
           <template is="movieItem" data="{{item}}"></template>
         </view>
       </scroll-view>
