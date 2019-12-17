@@ -1,3 +1,5 @@
+@import "../../templates/movieItem/movieItem-template.wxss"
+@import "../../templates/star/star-template.wxss"
 .movie-detail-container {
     width: 100%;
     height: 100%;
@@ -6,7 +8,7 @@
 
 .header-image {
   padding: 50rpx 30rpx 0rpx 40rpx;
-  background-image:url("https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2519994468.jpg");
+  /* background-image:url("{{movieDetail.images.large}}"); */
   z-index: -3;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -28,6 +30,10 @@
   color: rgb(255, 255, 255);
   font-weight: blod;
   font-size:60rpx;
+  max-width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .address {
@@ -64,6 +70,11 @@
   position: absolute;
   bottom: 0rpx;
   font-weight: bold;
+  max-width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 35rpx;
 }
 
 .image-container {
@@ -83,21 +94,18 @@
   margin-bottom: 20rpx;
 }
 
-.score, .director, .actor, .type, .plot-name {
-  display: inline-block;
+.mark, .director, .actor, .type, .plot-name, .men  {
   padding-right: 30rpx;
   color: rgb(163, 164, 163);
   font-weight: bold;
 
 }
 
-.star {
-  padding-right: 25rpx;
-}
-
-.total, .name, .actors, .type-detail, .plot-content, .actor-name, .men {
-  line-height: 20rpx;
+.total, .name, .actors, .type-detail, .plot-content, .actor-name{
   color: rgb(102, 102, 102);
+  font-size: 30rpx;
+  font-weight: bold;
+  display: inline-block;
 }
 
 .plot-container {
@@ -121,10 +129,12 @@
   display: inline-block;
 }
 
+
 .actor-image {
   width: 170rpx;
   height: 210rpx;
-  padding-bottom: 15rpx ;
+  padding-bottom: 15rpx;
+  display: block;
 }
 
 .men {
@@ -133,4 +143,8 @@
 
 .actor-name {
   justify-content: center;
+  max-width: 170rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

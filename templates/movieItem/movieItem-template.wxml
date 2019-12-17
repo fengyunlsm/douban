@@ -5,5 +5,5 @@
   <view class="title">
     {{item.original_title}}
   </view>
-  <template is="star" data="{{item}}"></template>
+  <template is="star" data="{{...item}}"></template>
 </template>

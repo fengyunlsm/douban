@@ -6,6 +6,7 @@
 .header {
   display: block;
   min-height: 30rpx;
+  position: relative;
 }
 span.titles {
   display: inline-block;
@@ -22,15 +23,17 @@ span.titles {
   right: 30rpx;
   color: rgb(76, 98, 133);
   font-size: 26rpx;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .icon {
-  display: inline-block;
   position: absolute;
   width: 12rpx;
   height: 25rpx;
   right: 0rpx;
-  top: 0rpx;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .content-container {

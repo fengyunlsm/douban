@@ -1,7 +1,6 @@
 <import src="../../templates/star/star-template.wxml" />
 <view class="movie-detail-container">
-    <image class="header-image">
-
+    <image class="header-image" style="background-image: url('{{movieDetail.images.large}}')">
     </image>
     <view class="header-container">
       <view class='big-title'>
@@ -21,16 +20,19 @@
     </view>
     <view class="movie-information">
       <view class="score-container">
-        <span class="score">评分</span>
-        <template is="star" data="{{movieDetail}}"></template>
+        <span class="mark">评分</span>
+        <template is="star" data="{{...movieDetail}}"></template>
       </view>
       <view class="director-container">
         <span class="director">导演</span>
-        <span class="name" wx:for="{{movieDetail.directors}}" wx:key="{{index}}">{{item.name}}/</span>
+        <span class="name" wx:for="{{movieDetail.directors}}" wx:key="{{index}}">{{item.name}}</span>
       </view>
       <view class="act-container">
         <span class="actor">影人</span>
-        <span class="actors" wx:for="{{movieDetail.casts}}" wx:key="{{index}}">{{item.name}}/</span>
+        <view class="actors" wx:for="{{movieDetail.casts}}" wx:key="{{index}}">
+          <span>{{item.name}}</span>
+          <span class="interval">/</span>
+        </view>
       </view>
       <view class="type-container">
         <span class="type">类型</span>
@@ -42,7 +44,6 @@
         剧情简介
       </view>
       <view class="plot-content">
-
         {{movieDetail.summary}}
       </view>
     </view>

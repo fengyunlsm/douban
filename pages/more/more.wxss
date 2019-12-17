@@ -2,10 +2,15 @@
 @import "../../templates/star/star-template.wxss"
 
 .content-container {
-  padding: 40rpx 40rpx 0rpx 25rpx;
+  padding: 40rpx 40rpx 0rpx 40rpx;
 }
 
 .content {
   display: inline-block;
   padding-right: 30rpx;
+}
+
+
+view :nth-child(3n) {
+  padding-right: 0rpx;
 }

@@ -1,6 +1,8 @@
 <import src="../../templates/movieItem/movieItem-template.wxml" />
 <view class="content-container" >
-  <view wx:for="{{movieDetails}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
-    <template is="movieItem" data="{{item}}"></template>
-  </view>
+  <scroll-view scroll-y="true" scroll="false" style="height: 900rpx" bindscrolltolower="onScrollLower">
+    <view wx:for="{{movieDetails}}" wx:key="{{index}}"  class="content" bindtap="goMoviesDetail" data-movieId="{{item.id}}">
+      <template is="movieItem" data="{{item}}"></template>
+    </view>
+  </scroll-view>
 </view>

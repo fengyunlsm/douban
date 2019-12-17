@@ -106,16 +106,10 @@ Page({
       }
     }
   },
-<<<<<<< HEAD
-  goMoviesDetail (options) {
-    // 跳转到详情页
-    app.movieId = options.currentTarget.dataset.movieid
-=======
   goMoviesDetail: function (options) {
     // 根据类型和数据来获取数据
     let movieId = options.currentTarget.dataset.movieid
     let category =  options.currentTarget.dataset.category
->>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4
     console.log('movieId: ', app.movieId)
     wx.navigateTo({
       url: "../movie_detail/movie_detail?category=" + category + '&movieId=' + movieId
@@ -128,11 +122,6 @@ Page({
       '2': 'top250',
       '3': 'coming_soon'
     }
-<<<<<<< HEAD
-    // 获取不一样的测试数据的
-    console.log('optionsID:', options)
-=======
->>>>>>> 72d770dea40d594d645e162df5d08a529f1698c4
     let movieListId = options.currentTarget.dataset.movielistid
     app.movieListRoute = route[movieListId]
     wx.navigateTo({
