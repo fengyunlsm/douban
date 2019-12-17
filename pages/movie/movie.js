@@ -125,6 +125,7 @@ Page({
       '2': 'top250',
       '3': 'coming_soon'
     }
+    // 获取不一样的测试数据的
     console.log('optionsID:', options)
     let movieListId = options.currentTarget.dataset.movielistid
     console.log('movieListId: ', movieListId)

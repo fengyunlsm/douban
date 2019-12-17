@@ -4,12 +4,15 @@ const app = getApp()
 
 Page({
   data: {
-    movieDetails: {}
+    movieDetails: {},
+    movieNavigate: ''
   },
   onLoad: function (options) {
-    // 获取所有数据，并取出 app.movieId 中的数据
+    // 获取'更多'页面的数据
     let that = this
     let url = 'http://t.yushu.im/v2/movie' + '/' + app.movieListRoute
+    // 根据 app.movieListRoute 来判断是哪个栏目
+    this.data.movieNavigate = this.getMovieNavigate(app.movieListRoute)
     console.log('地址: ', url )
     wx.request({
       url: url,
@@ -22,7 +25,20 @@ Page({
         })
       }
     })
-
+  },
+  onReady: function (options) {
+    wx.setNavigationBarTitle({
+      title: this.data.movieNavigate
+    })
+  },
+  getMovieNavigate(nav) {
+    if (nav === 'in_theaters') {
+      return '正在热映'
+    } else if (nav === 'top250') {
+      return 'Top250'
+    } else if (nav === 'coming_soon') {
+      return '即将上映'
+    }
   },
   getStar(in_theaters) {
     in_theaters.forEach((item, index) => {
