@@ -9,16 +9,21 @@ Page({
   onLoad: function (options) {
     // 获取所有数据，并取出 app.movieId 中的数据
     let that = this
+    console.log('options: ', options)
+    let movieId = options.movieId
+    let category =  options.category
+    let url = 'http://t.yushu.im/v2/movie' + '/' + category
+    console.log('url: ', url)
     wx.request({
-      url: 'http://t.yushu.im/v2/movie/in_theaters',
+      url: url,
       success: function (res) {
+        console.log('res: ', res)
         res.data.subjects.forEach((item) => {
-          if (item.id === app.movieId) {
+          if (item.id === parseInt(movieId)) {
             that.setData ({
-              // 设置data 里面的数据
               movieDetail: item
             }, () => {
-              console.log('movieDetail: ', that.data.movieDetail)
+              console.log('查看的细节数据: ', that.data.movieDetail)
             })
           }
         })
