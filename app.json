@@ -2,13 +2,15 @@
   "pages": [
     "pages/article/article",
     "pages/movie/movie",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "/pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#40a9ff",
     "navigationBarTitleText": "文与字",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
     "tabBar": {
       "selectedColor": "#ff5777",

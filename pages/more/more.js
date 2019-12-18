@@ -3,19 +3,21 @@ const app = getApp()
 
 Page({
   data: {
-    movieDetails: {},
+    movieDetails: [],
     navTitle: '',
-    start: 0
+    start: 0,
+    isReactBottom: true
   },
   onLoad: function (options) {
     // 获取'更多'页面的数据
     // 刚进入该页面，应该只显示 9条数据， 开始编号 +10
     // 下拉刷新时，再更新9条数据。并添加到 movieDetail中，编号 +10
     // 重新加载新的数据
-    reqData()
+    this.reqData()
   },
   reqData: function (event) {
     // 获取数据
+    wx.showLoading()
     let that = this
     let url = 'http://t.yushu.im/v2/movie' + '/' + app.movieListRoute + '?start=' + that.data.start + '&count=9'
     console.log('地址: ', url )
@@ -24,17 +26,40 @@ Page({
       success: function (res) {
         that.getStar(res.data.subjects)
         that.data.start = that.data.start + 10
+        if (that.data.isReactBottom) {
+          that.data.movieDetails = that.data.movieDetails.concat(res.data.subjects)
+        } else {
+          that.data.movieDetails = res.data.subjects
+        }
+        console.log('列表求职: ', that.data.movieDetails)
         that.setData({
-          movieDetails: res.data.subjects
+          movieDetails: that.data.movieDetails
         }, () => {
           console.log('列表: ',that.data.movieDetails)
         })
       }
     })
+    wx.hideLoading()
+  },
+  onPullDownRefresh: function () {
+    console.log('下拉刷新')
+    wx.showNavigationBarLoading()
+    let that = this
+    this.data.isReactBottom = false
+    that.setData({
+      start: 0
+    })
+    that.reqData()
+    setTimeout(() => {
+      wx.stopPullDownRefresh()  // 这样刷新完成之后就不会显示三个点
+      wx.hideNavigationBarLoading()
+    }, 2000)
   },
   onScrollLower: function (event) {
     // 加载下9条数据
+    this.data.isReactBottom = true
     console.log('滚动到底部')
+    this.reqData()
   },
   onReady: function () {
     // 根据传过来的参数显示导航标题

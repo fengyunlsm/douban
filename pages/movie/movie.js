@@ -7,7 +7,9 @@ Page({
     in_theaters: [],
     top250: [],
     coming_soon: [],
-    isSearch: true
+    isSearch: true,
+    showDel: false,
+    searchValue: ''
   },
   onLoad: function (options) {
     let that = this
@@ -75,6 +77,29 @@ Page({
       this.getStarPic(integer, remainder, item)
     })
   },
+  watchSearchInput: function (event) {
+    // 如果存在数据，则显示删除符号，如果点击删除，则input标签里的值都被删除，并且隐藏删除符号
+    // 如果存在数据，则点击空白处不能显示回原来，如果不存在数据，点击空白能显示为原来
+    // 点击确认按钮，能搜索出结果
+    if (event.detail.value === '') {
+      this.data.showDel = false
+    } else {
+      this.data.showDel = true
+    }
+    this.setData({
+      showDel: this.data.showDel,
+      searchValue:  event.detail.value
+    })
+    console.log(event.detail.value)
+  },
+  delSearchInput: function (event) {
+    // 删除数据 --
+    console.log(this.data.searchValue)
+    this.setData({
+      searchValue: '',
+      showDel: false
+    })
+  },
   getRemainder(starNum, integer) {
     // 求半星的数量
     let t =  starNum - integer
@@ -128,14 +153,25 @@ Page({
       url: "../more/more"
     })
   },
+  doSearch: function (e) {
+    // 进行搜索
+    console.log(e.detail.value)
+
+    wx.navigateTo({
+      url: "../search/search?keyword=" + e.detail.value
+    })
+
+  },
   search: function () {
     this.setData({
       isSearch: false
     })
   },
   cancelSearch: function () {
-    this.setData({
-      isSearch: true
-    })
+    if (!this.data.showDel) {
+      this.setData({
+        isSearch: true
+      })
+    }
   }
 })
