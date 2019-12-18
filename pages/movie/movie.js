@@ -1,6 +1,7 @@
 
 const app = getApp()
-
+const star = require('../../utils/star.js')
+const getStar = star.getStar
 
 Page({
   data: {
@@ -8,12 +9,12 @@ Page({
     top250: [],
     coming_soon: [],
     isSearch: true,
-    showDel: false,
+    showDelButton: false,
     searchValue: ''
   },
   onLoad: function (options) {
     let that = this
-  //  获取热映电影、即将上映、top250的数据
+    //  获取热映电影、即将上映、top250的数据
     wx.request({
       url: 'http://t.yushu.im/v2/movie/in_theaters',
       data: {
@@ -21,13 +22,12 @@ Page({
         count: 5,
       },
       success: function (res) {
-        that.getStar(res.data.subjects)
+        getStar(res.data.subjects)
         // res.data.subjects = {'type': '正在热映'}
-        // 十点半的地铁 终于每个人都有了
         that.setData ({
           'in_theaters': res.data.subjects
         }, () => {
-          console.log('isSearch: ',that.data.isSearch)
+          console.log('isSearch: ', that.data.isSearch)
         })
       }
     })
@@ -38,7 +38,7 @@ Page({
         count: 5,
       },
       success: function (res) {
-        that.getStar(res.data.subjects)
+        getStar(res.data.subjects)
         that.setData ({
           'top250': res.data.subjects
         }, () => {
@@ -53,7 +53,7 @@ Page({
         count: 5,
       },
       success: function (res) {
-        that.getStar(res.data.subjects)
+        getStar(res.data.subjects)
         that.setData ({
           'coming_soon': res.data.subjects
         }, () => {
@@ -62,80 +62,29 @@ Page({
       }
     })
   },
-  getStar(in_theaters) {
-    in_theaters.forEach((item, index) => {
-      // 转换成整数
-      // 求整 ，求余数
-      // 根据整数和余数插入星星
-      let starNum = parseInt(item.rating.stars) / 10
-      let integer = parseInt(starNum)
-      let remainder = this.getRemainder(starNum, integer)
-      if (index === 1) {
-        console.log('integer: ', integer)
-        console.log('remainder: ', remainder)
-      }
-      this.getStarPic(integer, remainder, item)
-    })
-  },
   watchSearchInput: function (event) {
-    // 如果存在数据，则显示删除符号，如果点击删除，则input标签里的值都被删除，并且隐藏删除符号
-    // 如果存在数据，则点击空白处不能显示回原来，如果不存在数据，点击空白能显示为原来
-    // 点击确认按钮，能搜索出结果
+
     if (event.detail.value === '') {
-      this.data.showDel = false
+      this.data.showDelButton = false
     } else {
-      this.data.showDel = true
+      this.data.showDelButton = true
     }
     this.setData({
-      showDel: this.data.showDel,
+      showDelButton: this.data.showDelButton,
       searchValue:  event.detail.value
     })
-    console.log(event.detail.value)
   },
   delSearchInput: function (event) {
-    // 删除数据 --
-    console.log(this.data.searchValue)
+    // 删除搜索输入
     this.setData({
       searchValue: '',
-      showDel: false
+      showDelButton: false
     })
-  },
-  getRemainder(starNum, integer) {
-    // 求半星的数量
-    let t =  starNum - integer
-    if (t < 0.5) {
-      return 0
-    } else {
-      return 1
-    }
-  },
-  getStarPic(integer, remainder, item) {
-    let plubPath = '/images/icon/'
-    item.rating.starPic = []
-    // 存放全星
-    for (let i = 0; i < integer; i++) {
-      let path = plubPath + 'star.png'
-      item.rating.starPic.push(path)
-    }
-    // 存放半星
-    if (remainder === 1) {
-      let path = plubPath + 'half-star.png'
-      item.rating.starPic.push(path)
-    }
-    // 存放 没星
-    let noneStarNum = 5 - integer - remainder
-    if (noneStarNum > 0) {
-      let path = plubPath + 'none-star.png'
-      for (let i = 0; i < noneStarNum; i++) {
-        item.rating.starPic.push(path)
-      }
-    }
   },
   goMoviesDetail: function (options) {
     // 根据类型和数据来获取数据
     let movieId = options.currentTarget.dataset.movieid
     let category =  options.currentTarget.dataset.category
-    console.log('movieId: ', app.movieId)
     wx.navigateTo({
       url: "../movie_detail/movie_detail?category=" + category + '&movieId=' + movieId
     })
@@ -155,12 +104,9 @@ Page({
   },
   doSearch: function (e) {
     // 进行搜索
-    console.log(e.detail.value)
-
     wx.navigateTo({
       url: "../search/search?keyword=" + e.detail.value
     })
-
   },
   search: function () {
     this.setData({
@@ -168,7 +114,7 @@ Page({
     })
   },
   cancelSearch: function () {
-    if (!this.data.showDel) {
+    if (!this.data.showDelButton) {
       this.setData({
         isSearch: true
       })

@@ -3,7 +3,7 @@
   <view class="search-container">
     <image src="../../images/icon/search.png" class="search" ></image>
     <input class="input" value="{{searchValue}}" bindconfirm="doSearch" bindinput="watchSearchInput" bindtap="search" placeholder="血战钢锯岭.你的名字" ></input>
-    <view wx:if="{{showDel}}">
+    <view wx:if="{{showDelButton}}">
       <image src="../../images/icon/xx.png" class="del" bindtap="delSearchInput"></image>
     </view>
   </view>

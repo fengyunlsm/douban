@@ -1,12 +1,10 @@
 const getStar = function (in_theaters)  {
+  // in_hteaters： arr
   in_theaters.forEach((item, index) => {
-    // 转换成整数
-    // 求整 ，求余数
-    // 根据整数和余数插入星星
     let starNum = parseInt(item.rating.stars) / 10
     let integer = parseInt(starNum)
-    let remainder = this.getRemainder(starNum, integer)
-    this.getStarPic(integer, remainder, item)
+    let remainder = getRemainder(starNum, integer)
+    getStarPic(integer, remainder, item)
   })
 }
 const getRemainder = function (starNum, integer) {
@@ -41,6 +39,8 @@ const getStarPic = function (integer, remainder, item) {
   }
 }
 
-module.exports = {
+var star = {
   getStar: getStar
 }
+
+module.exports = star
